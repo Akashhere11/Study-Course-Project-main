@@ -1,0 +1,107 @@
+<%- include("./header.ejs") %>
+
+    <!--Start Login One-->
+    <section class="login-one">
+        <div class="container">
+            <div class="login-one__form">
+                <div style="padding-bottom: 20px;" class="inner-title text-center">
+                    <h2>Login Here</h2>
+                </div>
+                <% if(msg.length>0){ %>
+                    <div class="alert alert-info">
+                        <!--to print-->
+                        <%= msg %>
+                    </div>
+                    <%} %>
+
+                        <% if(msg1.length>0){ %>
+                            <div class="alert alert-danger">
+                                <!--to print-->
+                                <%= msg1 %>
+                            </div>
+                            <%} %>
+                                <form id="login-one__form" name="Login-one_form" action="/userLogin" method="post">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <div class="input-box">
+                                                    <input type="email" name="email" id="formEmail"
+                                                        placeholder="Email..." required="" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <div class="input-box">
+                                                    <input type="password" name="password" id="formPassword"
+                                                        placeholder="Password..." required="" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <button class="thm-btn" type="submit"
+                                                    data-loading-text="Please wait...">Login
+                                                    Here</button>
+                                            </div>
+                                        </div>
+                                        <div class="remember-forget">
+                                            <div class="forget">
+                                                <a href="#">Forget password?</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="create-account text-center">
+                                            <p>Not registered yet? <a href="/register">Create an Account</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+            </div>
+        </div>
+    </section>
+    <!--End Login One-->
+
+    <!--Contact Info One Start -->
+    <section class="contact-info-one">
+        <div class="container">
+            <ul class="list-unstyled contact-info-one__list">
+                <li>
+                    <div class="contact-info-one__single">
+                        <div class="contact-info-one__icon">
+                            <span class="icon-envelope"></span>
+                        </div>
+                        <div class="contact-info-one__content">
+                            <p class="contact-info-one__sub-title">Email Address:</p>
+                            <h5 class="contact-info-one__email"><a href="">support@pnportal.com</a></h5>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="contact-info-one__single">
+                        <div class="contact-info-one__icon">
+                            <span class="icon-phone"></span>
+                        </div>
+                        <div class="contact-info-one__content">
+                            <p class="contact-info-one__sub-title">Phone Number</p>
+                            <h5 class="contact-info-one__email"><a href="">+91 9691213817</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="contact-info-one__single">
+                        <div class="contact-info-one__icon">
+                            <span class="icon-location"></span>
+                        </div>
+                        <div class="contact-info-one__content">
+                            <p class="contact-info-one__sub-title">Our Address</p>
+                            <h5 class="contact-info-one__email">MIG-332 Darpan Colony,Thatipur, Gwalior</h5>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--Contact Info One End -->
+
+    <%- include("./footer.ejs") %>

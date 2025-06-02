@@ -1,0 +1,100 @@
+<%- include('./header.ejs') %>
+    <%- include('./sidebar.ejs') %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Course</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                                <li class="breadcrumb-item active">Course Display</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Courses Data with default features</h3>
+                            <% if(msg.length>0){%>
+                                <div class="alert alert-danger text-center">
+                                    <%= msg %>
+                                </div>
+                                <%}%>
+
+                                    <% if(msg1.length>0){%>
+                                        <div class="alert alert-success text-center">
+                                            <%= msg1 %>
+                                        </div>
+                                        <%}%>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <% c.forEach((item,index)=>{%>
+                                <div class="card d-inline-block m-1 p-2" style="width: 265px;">
+                                    <img class="card-img-top" style="height: 150px; width:100%;"
+                                        src="<%= item.courseImage.url_1%>" alt="Card image cap">
+                                    <div class="d-flex pt-2 justify-content-between">
+                                        <div class="">
+                                            <p>Price: &#8377;<%= item.coursePrize %>
+                                            </p>
+                                        </div>
+                                        <div class="">
+                                            <p><i class="fa-solid fa-star" style="color: #FFC224"></i> 4.5 <span>(129
+                                                    Reviews)</span></p>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-weight-bold">
+                                        <%= item.courseName %>
+                                    </h3>
+                                    <div class="d-flex d-block pt-2 justify-content-between">
+                                        <div class="">
+                                            <p>Teacher: <%= item.teacherName %>
+                                            </p>
+                                        </div>
+
+                                        <div class="">
+                                            <img class="" style="height: 30px; width: 30px; border-radius: 50%;"
+                                                src="<%= item.teacherImage.url_2%>" alt="teacherImage">
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <p>
+                                            Expirience: <%= item.expYear %> years
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <p>
+                                            Course Level: <%= item.courseLevel %>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <a href="/admin/viewCourse/<%= item.id %>" class="btn btn-primary mt-3">View
+                                            Course <i class="fa-solid fa-eye"></i></a>
+                                        <a href="/admin/addLecture/<%= item.id %>" class="btn btn-primary mt-3">Lectures
+                                            <i class="fa-solid fa-video"></i></a>
+                                    </div>
+                                </div>
+                                <%})%>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <%- include('./footer.ejs') %>
